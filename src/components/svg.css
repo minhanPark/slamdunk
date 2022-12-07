@@ -1,0 +1,17 @@
+@keyframes draw {
+  0% {
+    stroke-dashoffset: 465;
+  }
+  50% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 465;
+  }
+}
+
+.svg-text {
+  stroke-dasharray: 465;
+  stroke-dashoffset: 465;
+  animation: draw 2s linear infinite;
+}
