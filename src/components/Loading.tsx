@@ -1,20 +1,11 @@
 import React from "react";
 import SlamDunkText from "./SlamDunkText";
-import styled from "styled-components";
-
-const Background = styled.div`
-  background-color: "#0d1821";
-  height: "100vh";
-  display: "flex";
-  justify-content: "center";
-  align-items: "center";
-`;
 
 const Loading = () => {
   return (
-    <Background>
+    <div className="bg-[#0d1821] h-screen flex justify-center items-center">
       <SlamDunkText />
-    </Background>
+    </div>
   );
 };
 
