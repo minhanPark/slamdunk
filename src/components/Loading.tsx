@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import SlamDunkText from "./SlamDunkText";
 import classNames from "classnames";
 
@@ -7,10 +7,22 @@ interface Props {
 }
 
 const Loading = ({ isLoading }: Props) => {
+  const backgroundRef = useRef<HTMLDivElement>(null);
+  const [isShow, setIsShow] = useState(true);
+  const hide = () => {
+    setIsShow(false);
+  };
+  useEffect(() => {
+    if (backgroundRef && backgroundRef.current) {
+      backgroundRef.current.addEventListener("transitionend", hide);
+    }
+  }, [backgroundRef]);
+  if (!isShow) return null;
   return (
     <div
+      ref={backgroundRef}
       className={classNames(
-        "bg-[#0d1821] h-screen flex justify-center items-center transition-opacity duration-1000 ease-in",
+        "bg-[#0d1821] h-screen flex justify-center items-center transition-opacity duration-[2000ms] ease-in",
         { "opacity-100": isLoading, "opacity-0": !isLoading }
       )}
     >

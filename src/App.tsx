@@ -19,7 +19,7 @@ function App() {
   return (
     <>
       <Loading isLoading={loading} />
-      <div>
+      <div className="aa">
         <h1>지금부터 시작입니다.</h1>
       </div>
     </>
