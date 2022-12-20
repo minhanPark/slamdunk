@@ -15,6 +15,10 @@ const Loading = ({ isLoading }: Props) => {
   useEffect(() => {
     if (backgroundRef && backgroundRef.current) {
       backgroundRef.current.addEventListener("transitionend", hide);
+
+      return () => {
+        backgroundRef.current?.removeEventListener("transitionend", hide);
+      };
     }
   }, [backgroundRef]);
   if (!isShow) return null;
