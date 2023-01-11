@@ -26,7 +26,7 @@ const Loading = ({ isLoading }: Props) => {
     <div
       ref={backgroundRef}
       className={classNames(
-        "bg-[#0d1821] h-screen flex justify-center items-center transition-opacity duration-[2000ms] ease-in",
+        "bg-[#0d1821] h-screen flex justify-center items-center transition-opacity duration-[4000ms] ease-in absolute w-full",
         { "opacity-100": isLoading, "opacity-0": !isLoading }
       )}
     >
